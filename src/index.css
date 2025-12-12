@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Chama Lanches Design System */
+    --background: 0 0% 0%; /* Preto */
+    --foreground: 0 0% 100%; /* Branco */
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Laranja vibrante - energia e apetite */
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 100% 60%;
+
+    /* Amarelo ensolarado - alegria e otimismo */
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Amarelo como accent */
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 25 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 50%), hsl(48 100% 50%));
+    --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+    
+    /* Sombras com glow */
+    --shadow-glow-orange: 0 0 40px hsl(25 100% 50% / 0.5);
+    --shadow-glow-yellow: 0 0 30px hsl(48 100% 50% / 0.4);
+    --shadow-elegant: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+    /* Transições */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow-orange {
+    box-shadow: var(--shadow-glow-orange);
+  }
+
+  .shadow-glow-yellow {
+    box-shadow: var(--shadow-glow-yellow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
